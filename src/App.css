@@ -11,6 +11,7 @@ nav {
 nav > ul {
   list-style-type: none;
 }
+
 nav > ul > li {
   display: inline-block;
   padding-right: 20px;

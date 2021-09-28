@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 export default function Book(props) {
-  const handleClick = (e) => {
+  const dispatch = useDispatch();
+
+  const removeItem = (e) => {
     e.preventDefault();
-    props.removeBooksProps(props.book.id);
+    dispatch(removeBook(props.book.id));
   };
   const { book } = props;
   return (
@@ -14,11 +18,10 @@ export default function Book(props) {
       -
       {' '}
       {book.author}
-      <button type="button" onClick={handleClick}>Remove</button>
+      <button type="button" onClick={removeItem}>Remove</button>
     </li>
   );
 }
 Book.propTypes = {
   book: PropTypes.objectOf(PropTypes.any).isRequired,
-  removeBooksProps: PropTypes.func.isRequired,
 };

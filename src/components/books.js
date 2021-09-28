@@ -1,50 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { v4 as uuid } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from './book';
 import Form from './form';
+import { addBook } from '../redux/books/books';
 
 export default function Books() {
-  let books;
-  if (!localStorage.getItem('books')) {
-    books = [
-      {
-        id: 1,
-        title: 'Harry Porter',
-        author: 'J.K.Rowling',
-      },
-      {
-        id: 2,
-        title: 'War and Peace',
-        author: 'Leo Tolstoy',
-      },
-
-    ];
-  } else {
-    books = JSON.parse(localStorage.getItem('books'));
-  }
-  const [bookList, setBookList] = useState(books);
+  const dispatch = useDispatch();
+  const bookList = useSelector((state) => state.books);
 
   const handleSubmit = (bookDetails) => {
     const newBook = { id: uuid(), ...bookDetails };
-    setBookList([...bookList, newBook]);
+    dispatch(addBook(newBook));
   };
-
-  const removeBook = (id) => {
-    setBookList([...bookList.filter((book) => (book.id !== id))]);
-  };
-
-  useEffect(() => {
-    localStorage.setItem('books', JSON.stringify(bookList));
-  }, [bookList]);
 
   return (
     <div>
       <ul>
-        {bookList.map((book) => (
+        {bookList.length > 0 && bookList.map((book) => (
           <Book
             key={book.id}
             book={book}
-            removeBooksProps={removeBook}
           />
         ))}
       </ul>

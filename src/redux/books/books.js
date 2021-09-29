@@ -28,7 +28,6 @@ export const addBook = (payload) => async (dispatch) => fetch(`${API}books`, {
   body: JSON.stringify(payload),
 })
   .then((res) => {
-    console.log(res);
     if (res.status === 201) {
       dispatch({ type: ADD_BOOK, payload });
     }

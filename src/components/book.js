@@ -8,7 +8,7 @@ export default function Book(props) {
 
   const removeItem = (e) => {
     e.preventDefault();
-    dispatch(removeBook(props.book.id));
+    dispatch(removeBook(props.book.item_id));
   };
   const { book } = props;
   return (
@@ -17,7 +17,7 @@ export default function Book(props) {
       {' '}
       -
       {' '}
-      {book.author}
+      {book.category}
       <button type="button" onClick={removeItem}>Remove</button>
     </li>
   );

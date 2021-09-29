@@ -21,10 +21,17 @@ export const removeBook = (payload) => async (dispatch) => fetch(`${API}books/${
 
 export const addBook = (payload) => async (dispatch) => fetch(`${API}books`, {
   method: 'POST',
+  credentials: 'same-origin',
+  headers: {
+    'Content-Type': 'application/json',
+  },
   body: JSON.stringify(payload),
 })
-  .then(() => {
-    dispatch({ type: ADD_BOOK, payload });
+  .then((res) => {
+    console.log(res);
+    if (res.status === 201) {
+      dispatch({ type: ADD_BOOK, payload });
+    }
   })
   .catch((err) => {
     console.log(err);

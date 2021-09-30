@@ -1,14 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
   return (
     <nav>
-      <header>BOOKSTORE CMS </header>
-      <ul>
-        <li><Link to="/">BOOKS</Link></li>
-        <li><Link to="/categories">CATEGORIES</Link></li>
-      </ul>
+      <div className="header-wrapper">
+        <header>Bookstore CMS </header>
+        <ul className="menu">
+          <li><NavLink exact to="/" activeClassName="active">BOOKS</NavLink></li>
+          <li><NavLink exact to="/categories" activeClassName="active">CATEGORIES</NavLink></li>
+        </ul>
+      </div>
+      <div className="profile-icon"><i className="fa fa-user-circle" /></div>
     </nav>
   );
 }

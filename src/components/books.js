@@ -29,6 +29,7 @@ export default function Books() {
         ))}
 
       </ul>
+      <h2>ADD NEW BOOK</h2>
       <Form handleSubmit={handleSubmit} />
     </div>
   );

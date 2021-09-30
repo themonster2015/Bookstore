@@ -18,7 +18,7 @@ export default function Book(props) {
       -
       {' '}
       {book.category}
-      <button type="button" onClick={removeItem}>Remove</button>
+      <button type="button" onClick={removeItem} className="btn btn-primary">Remove</button>
     </li>
   );
 }

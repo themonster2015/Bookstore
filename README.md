@@ -7,7 +7,8 @@
 - Add a book.
 - Remove a selected book.
 
-![screenshot](./app_screenshot.png)
+![Screen Shot 2021-10-01 at 10 06 25](https://user-images.githubusercontent.com/10905837/135588858-cef714fa-09c1-4de8-b3bf-77258f5b183e.png)
+
 
 
 ## Built With
@@ -18,7 +19,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://vibrant-shockley-2f301b.netlify.app/)
 
 ## Getting Started
 

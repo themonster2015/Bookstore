@@ -4,14 +4,14 @@
   background-color: #fafafa;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
   height: 5.938rem;
   margin: 0 0 2.375rem;
-  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
   background-color: #fff;
 }
 
@@ -26,9 +26,10 @@ nav {
   vertical-align: middle;
   background-color: #fff;
 }
+
 .menu > li > a {
   color: lightgrey;
-  text-decoration-style: none;
+  text-decoration: none;
 }
 
 .header-wrapper {
@@ -37,6 +38,7 @@ nav {
   align-items: center;
   background-color: #fff;
 }
+
 i {
   color: #0290ff;
 }
@@ -64,4 +66,105 @@ header {
 .active {
   color: #121212 !important;
   text-decoration: none;
+}
+
+.comment,
+.edit,
+.remove {
+  position: relative;
+  color: #4386bf;
+}
+
+.comment:not(:last-child)::after,
+.edit:not(:last-child)::after,
+.remove:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  border-right: 1px solid #e8e8e8;
+  top: 30%;
+  bottom: 30%;
+  height: 15px;
+}
+
+.bookBlock {
+  background-color: white;
+  height: 200px;
+  margin-bottom: 30px;
+  width: 100%;
+  border: 2px lightgrey solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 100px;
+}
+
+.allBooks {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.allBooks > li {
+  width: 100%;
+  background-color: white;
+}
+
+.main-content {
+  margin: 0 auto;
+  width: 80%;
+  padding-bottom: 100px;
+}
+
+/* circle */
+.test {
+  background-color: #000;
+  width: 70px;
+  height: 70px;
+}
+
+svg {
+  width: 70px;
+  height: 70px;
+}
+
+.test circle {
+  transform: rotate(-90deg) translate(10px, 10px);
+  transform-origin: center;
+  position: absolute;
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 7px;
+  stroke-linecap: round;
+}
+
+.test circle:nth-child(2) {
+  stroke: #307bbe;
+  stroke-dasharray: 240;
+  stroke-dashoffset: 160;
+}
+
+.form-title {
+  color: #888;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.bookTitle {
+  font-family: RobotoSlab, sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.nav-wrapper {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-left: 0;
 }

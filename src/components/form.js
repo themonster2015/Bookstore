@@ -29,13 +29,13 @@ export default function Form(props) {
 
   return (
     <form onSubmit={submitForm}>
-      <div className="form-row">
-        <div className="col-7">
+      <div className="form-row w-100">
+        <div className="col-7 pr-3">
           <input type="text" id="title" name="title" value={state.title} className="form-control" placeholder="Book Title..." onChange={handleChange} />
           <span style={{ color: 'red' }}>{state.errors.title}</span>
 
         </div>
-        <div className="col">
+        <div className="col pr-3">
           <select name="category" id="category" className="form-control" onChange={handleChange}>
             <option selected value="">Category</option>
             <option value="Action">Action</option>
@@ -49,7 +49,7 @@ export default function Form(props) {
 
         </div>
         <div className="col">
-          <button type="submit" className="btn btn-primary">ADD BOOK </button>
+          <button type="submit" className="btn btn-primary w-100">ADD BOOK </button>
         </div>
       </div>
     </form>

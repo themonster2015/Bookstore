@@ -52,7 +52,7 @@ export const viewBooks = () => async (dispatch) => fetch(`${API}books`).then((re
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOKS:
-      return [...state, ...action.payload];
+      return [...action.payload];
     case ADD_BOOK:
       return [...state, action.payload];
 

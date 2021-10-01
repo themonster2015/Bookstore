@@ -19,8 +19,8 @@ export default function Books() {
   }, []);
 
   return (
-    <div>
-      <ul>
+    <div className="main-content">
+      <ul className="allBooks">
         {bookList.length > 0 && bookList.map((data) => (
           <Book
             key={data.item_id}
@@ -29,6 +29,7 @@ export default function Books() {
         ))}
 
       </ul>
+      <h2 className="form-title">ADD NEW BOOK</h2>
       <Form handleSubmit={handleSubmit} />
     </div>
   );
